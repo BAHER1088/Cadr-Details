@@ -1,0 +1,337 @@
+:root {
+  --primary-light: #8e8aff;
+  --primary: #655dff;
+  --primary-dark: #4f46f8;
+  --secondary: #17c9ff;
+  --alert: #ff6a96;
+  --greyLight-1:#cad6e0;
+  --greyLight-2:#9eacbd;
+  --greyDark-1:#92acc4;
+  --greyDark-2:#5a768f ;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  overflow-y: scroll;
+  background: #e4f3ff;
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 0.03rem;
+}
+
+.container {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment {
+  width: 74.8rem;
+  height: 48rem;
+  border-radius: 0.8rem;
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 32rem 24.8rem;
+  padding: 4rem 6rem;
+  grid-gap: 6rem;
+  align-items: center;
+  align-content: center;
+  position: relative;
+}
+
+.card {
+  grid-column: 1/2;
+  width: 32rem;
+  height: 20rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 0 2rem;
+  align-items: center;
+  color: #ffffff;
+  background: linear-gradient(45deg, #080325 0%, #5d34f2 100%);
+  box-shadow: -0.6rem 0.6rem 1.8rem rgba(79, 70, 248, 0.2392156863);
+  border: 1px solid #ffffff;
+  z-index: 200;
+  position: relative;
+}
+.card .logo {
+  position: absolute;
+  top: calc(100% - 145px);
+  right: 0px;
+  z-index: -1;
+  opacity: 20%;
+}
+.card__visa {
+  justify-self: flex-end;
+  grid-column: 2/3;
+  overflow: hidden;
+  width: 5.5rem;
+}
+.card__number {
+  font-family: "Roboto Mono", monospace;
+  grid-column: 1/3;
+  grid-row: 2/3;
+  font-size: 1.8rem;
+  letter-spacing: 0.12rem;
+}
+.card__name {
+  grid-row: 3/4;
+}
+.card__name h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  font-weight: 300;
+}
+.card__name p {
+  font-size: 1.4rem;
+}
+.card__expiry {
+  grid-row: 3/4;
+  justify-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.card__expiry h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  font-weight: 300;
+}
+.card__expiry p {
+  font-size: 1.4rem;
+}
+
+.form {
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: repeat(2, 11rem);
+  grid-template-rows: repeat(5, min-content);
+  grid-column-gap: 2.8rem;
+  grid-row-gap: 1.2rem;
+  color: var(--greyDark-2);
+}
+.form h2 {
+  font-size: 2rem;
+  grid-column: 1/3;
+  line-height: 1;
+  margin-bottom: 1.4rem;
+  font-family: "Inter", sans-serif;
+}
+.form__detail {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  padding-bottom: 0.6rem;
+  color: var(--greyDark-1);
+}
+.form__name {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  justify-self: stretch;
+}
+.form__number {
+  grid-column: 1/3;
+  grid-row: 3/4;
+  justify-self: stretch;
+}
+.form__expiry {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+.form__cvv {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  justify-self: flex-end;
+  width: 100%;
+}
+.form__cvv input[type=checkbox] {
+  display: none;
+}
+.form__cvv .info {
+  top: -0.4rem;
+  left: 2.4rem;
+  color: var(--greyDark-1);
+}
+.form__cvv .infoMsg {
+  width: 200%;
+  position: absolute;
+  top: 15%;
+  left: 150%;
+  transform: translate(-50%, -100%);
+  background: var(--greyLight-1);
+  opacity: 80%;
+  border: solid 1px var(--greyDark-1);
+  border-radius: 1.5rem;
+  border-bottom-left-radius: 0px;
+  padding: 1rem;
+  display: none;
+  color: var(--greyDark-2);
+  font-size: 1.4rem;
+  text-align: center;
+}
+.form__btn {
+  grid-column: 1/3;
+  grid-row: 5/6;
+  height: 3.8rem;
+  border-radius: 0.6rem;
+  border: none;
+  background: var(--primary);
+  color: #ffffff;
+  justify-self: stretch;
+  font-family: inherit;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.form__btn:focus {
+  outline: none;
+}
+.form__btn:hover {
+  background: rgb(79, 70, 229);
+}
+.form ion-icon {
+  position: absolute;
+  font-size: 2rem;
+  top: 3.4rem;
+  margin-left: 1rem;
+  color: var(--primary-light);
+  stroke: var(--primary);
+}
+.form label {
+  pointer-events: none;
+  font-size: 1.4rem;
+  padding: 0 0 1rem 0;
+  line-height: 1;
+  color: var(--greyDark-1);
+}
+.form input {
+  padding: 1rem 1rem 1rem 4rem;
+  border: none;
+  background: transparent;
+  border-radius: 0.6rem;
+  border: 1px solid var(--greyLight-2);
+  color: var(--greyDark-2);
+  font-family: inherit;
+  font-size: 1.4rem;
+}
+.form input::-moz-placeholder {
+  color: var(--greyLight-1);
+  font-size: inherit;
+  letter-spacing: 0.12rem;
+}
+.form input::placeholder {
+  color: var(--greyLight-1);
+  font-size: inherit;
+  letter-spacing: 0.12rem;
+}
+.form input:focus {
+  outline: none;
+}
+.form input:hover {
+  border: 1px solid var(--primary-light);
+}
+
+.alert {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  color: var(--alert);
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+}
+.alert svg {
+  margin-right: 0.4rem;
+}
+
+.dribbble {
+  position: fixed;
+  font-size: 36px;
+  right: 20px;
+  bottom: 20px;
+  color: #ea4c89;
+}
+
+.hover {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  top: -15.7rem;
+  left: 17.3rem;
+  z-index: 1;
+}
+
+.card {
+  perspective: 1000px;
+}
+
+.cardFront, .cardBack {
+  position: absolute;
+  backface-visibility: hidden;
+  transition: 0.6s;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+.cardBack .CVV {
+  background-color: white;
+  opacity: 80%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding-right: 10px;
+  padding-left: 130px;
+  height: 40px;
+}
+.cardBack span {
+  width: 50px;
+}
+.cardBack span h3, .cardBack span p {
+  color: black;
+  font-size: 15px;
+  text-align: center;
+  line-height: 20px;
+}
+
+#flip {
+  position: absolute;
+  scale: 0;
+  color: #4f46f8;
+  top: 50%;
+  left: 50%;
+  background-color: #4f46f8;
+  background: #4f46f8;
+  z-index: 100000;
+}
+
+#cardLabel {
+  position: absolute;
+  top: 30%;
+  left: 7%;
+}
+
+.cardBack > .card__visa {
+  position: relative;
+  left: -210px;
+  top: 5px;
+  width: 318px;
+  height: 40px;
+  background-color: black;
+  outline: red;
+}/*# sourceMappingURL=style.css.map */
