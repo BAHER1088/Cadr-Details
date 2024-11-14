@@ -257,14 +257,6 @@ html {
   margin-right: 0.4rem;
 }
 
-.dribbble {
-  position: fixed;
-  font-size: 36px;
-  right: 20px;
-  bottom: 20px;
-  color: #ea4c89;
-}
-
 .hover {
   position: relative;
   width: 17px;
@@ -287,10 +279,6 @@ html {
 
 .cardBack {
   transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
 }
 .cardBack .CVV {
   background-color: white;
