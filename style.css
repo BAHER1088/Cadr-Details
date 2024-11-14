@@ -4,13 +4,15 @@
   --primary-dark: #4f46f8;
   --secondary: #17c9ff;
   --alert: #ff6a96;
-  --greyLight-1:#cad6e0;
-  --greyLight-2:#9eacbd;
-  --greyDark-1:#92acc4;
-  --greyDark-2:#5a768f ;
+  --greyLight-1: #cad6e0;
+  --greyLight-2: #9eacbd;
+  --greyDark-1: #92acc4;
+  --greyDark-2: #5a768f;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -47,6 +49,7 @@ html {
 }
 
 .card {
+  top: 30%;
   grid-column: 1/2;
   width: 32rem;
   height: 20rem;
@@ -275,7 +278,8 @@ html {
   perspective: 1000px;
 }
 
-.cardFront, .cardBack {
+.cardFront,
+.cardBack {
   position: absolute;
   backface-visibility: hidden;
   transition: 0.6s;
@@ -302,7 +306,8 @@ html {
 .cardBack span {
   width: 50px;
 }
-.cardBack span h3, .cardBack span p {
+.cardBack span h3,
+.cardBack span p {
   color: black;
   font-size: 15px;
   text-align: center;
@@ -334,4 +339,34 @@ html {
   height: 40px;
   background-color: black;
   outline: red;
+}
+
+@media (max-width: 575.98px) {
+  body {
+    height: 120vh;
+  }
+  .payment {
+    position: relative;
+    top: 50px;
+    width: 50rem;
+    height: 70rem;
+    border-radius: 0.8rem;
+    background: #ffffff;
+    padding: 0px;
+    justify-content: center;
+    justify-items: center;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .card {
+    left: 50%;
+    top: 50px;
+    grid-area: 1/1/3/2;
+  }
+  .form {
+    position: relative;
+    left: 50%;
+    top: 0px;
+    grid-area: 2/1/3/2;
+  }
 }/*# sourceMappingURL=style.css.map */
